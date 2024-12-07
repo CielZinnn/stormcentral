@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Storm Central</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 20px;
+            background: #1f1c3c;
+            color: #00ff00;
+            border-bottom: 2px solid #00ff00;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 0 10px #66ff66;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #66ff66;
+        }
+
+        /* Menu de navegação */
+        nav {
+            background: #1b1a33;
+            border-bottom: 2px solid #00ff00;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #00ff00;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        nav ul li a:hover {
+            background: #66ff66;
+            color: #0f0c29;
+            text-shadow: 0 0 5px #0f0c29;
+            box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+        }
+
+        /* Seção principal */
+        main {
+            padding: 20px;
+            flex: 1;
+        }
+        .about {
+            background: rgba(15, 12, 41, 0.8);
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #00ff00;
+        }
+        .about h2 {
+            color: #66ff66;
+            text-shadow: 0 0 10px #66ff66;
+        }
+        .about p {
+            line-height: 1.6;
+            color: #ccffcc;
+        }
+
+        /* Formulário de Contato */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: rgba(15, 12, 41, 0.8);
+            padding: 20px;
+            border: 1px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #00ff00;
+        }
+        form label {
+            color: #66ff66;
+        }
+        form input, form textarea {
+            background: transparent;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            padding: 10px;
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        form input:focus, form textarea:focus {
+            border-color: #66ff66;
+            box-shadow: 0 0 10px #66ff66;
+        }
+        form input[type="submit"] {
+            background: linear-gradient(135deg, #00ff00, #66ff66);
+            color: #0f0c29;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        form input[type="submit"]:hover {
+            background: linear-gradient(135deg, #66ff66, #00ff00);
+            color: #1f1c3c;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #1f1c3c;
+            color: #00ff00;
+            border-top: 2px solid #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Storm Central</h1>
+        <p>A inovação começa aqui</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="scripts.html">Scripts</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="about">
+            <h2>Sobre Nós</h2>
+            <p>Bem-vindo ao Storm Central, onde a inovação encontra a tecnologia. Estamos aqui para transformar o seu futuro com soluções de ponta e uma abordagem visionária.</p>
+        </div>
+        <form action="mailto:cieldomore@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </main>
+    <footer>
+        <p>© 2024 Storm Central | Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

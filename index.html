@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Storm - Central</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            cursor: url('https://cur.cursors-4u.net/cursors/cur-13/cur1210.cur'), auto;
+            transition: background-color 0.5s ease-in-out;
+        }
+        body:hover {
+            background-color: #111111;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid #00ff00;
+            background: #1f1c3c;
+            color: #00ff00;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 0 10px #66ff66;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #66ff66;
+        }
+
+        /* Menu de navegação */
+        nav {
+            background: #1b1a33;
+            border-bottom: 2px solid #00ff00;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #00ff00;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        nav ul li a:hover {
+            background: #66ff66;
+            color: #0f0c29;
+            text-shadow: 0 0 5px #0f0c29;
+            box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+        }
+
+        /* Seção principal */
+        main {
+            padding: 20px;
+        }
+        .post {
+            background: rgba(15, 12, 41, 0.8);
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #00ff00;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .post:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #00ff00;
+        }
+        .post h2 {
+            color: #66ff66;
+            text-shadow: 0 0 10px #66ff66;
+        }
+        .post p {
+            line-height: 1.6;
+            color: #ccffcc;
+        }
+        .post ul li {
+            margin-bottom: 10px;
+        }
+        .post ul li strong {
+            color: #00ff00;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #1f1c3c;
+            color: #00ff00;
+            border-top: 2px solid #00ff00;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Storm - Central</h1>
+        <p>Explorando o mundo da segurança cibernética, hacking ético e muito mais.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="scripts.html">Scripts</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="post">
+            <h2>O que é Hacking?</h2>
+            <p>Hacking é a arte de explorar sistemas e encontrar vulnerabilidades para entendê-los melhor ou protegê-los contra ataques maliciosos.</p>
+        </div>
+        <div class="post">
+            <h2>🔥 Top Ferramentas de Hacking 💻</h2>
+            <ul>
+                <li><strong>🐉 <a href="https://www.kali.org/" target="_blank">Kali Linux</a></strong> - Um sistema operacional baseado em Linux, projetado para testes de penetração e segurança cibernética. Contém diversas ferramentas pré-instaladas para exploração de vulnerabilidades, análise forense e muito mais.</li>
+                <li><strong>🛠️ <a href="https://www.metasploit.com/" target="_blank">Metasploit</a></strong> - Um framework poderoso para criação, execução e gerenciamento de exploits. É amplamente utilizado para testar a segurança de sistemas.</li>
+                <li><strong>🌐 <a href="https://www.wireshark.org/" target="_blank">Wireshark</a></strong> - Uma ferramenta de análise de pacotes que permite capturar e inspecionar o tráfego de rede em tempo real, essencial para detectar possíveis invasões ou falhas.</li>
+                <li><strong>🕵️ <a href="https://portswigger.net/burp" target="_blank">Burp Suite</a></strong> - Um conjunto de ferramentas para testes de segurança em aplicações web, usado principalmente para manipular e analisar o tráfego HTTP.</li>
+                <li><strong>💾 <a href="https://sqlmap.org/" target="_blank">SQLmap</a></strong> - Ferramenta open-source para detecção e exploração de injeções SQL. Permite extrair dados de bancos de dados vulneráveis com facilidade.</li>
+                <li><strong>🔒 <a href="https://www.aircrack-ng.org/" target="_blank">Aircrack-ng</a></strong> - Uma coleção de ferramentas para avaliação de segurança em redes Wi-Fi, usada para testar a força de senhas e a criptografia de redes sem fio.</li>
+                <li><strong>🧰 <a href="https://nmap.org/" target="_blank">Nmap</a></strong> - Um scanner de rede popular, usado para mapear redes, identificar portas abertas e serviços em execução em dispositivos conectados.</li>
+                <li><strong>🔍 <a href="https://johnny.ihackstuff.com/" target="_blank">Google Dorks</a></strong> - Técnicas de busca avançada no Google para encontrar informações sensíveis ou explorar possíveis falhas de segurança online.</li>
+                <li><strong>⚡ <a href="https://github.com/PowerShellMafia/PowerSploit" target="_blank">PowerSploit</a></strong> - Uma coleção de scripts para exploração de sistemas Windows usando o PowerShell. Popular em auditorias de segurança.</li>
+                <li><strong>🎯 <a href="https://www.hashcat.net/hashcat/" target="_blank">Hashcat</a></strong> - Uma ferramenta de quebra de senhas altamente eficiente, capaz de utilizar GPU para acelerar o processo de brute force e recuperação de hashes.</li>
+            </ul>
+            <p>⚡ Explore essas ferramentas e expanda seus conhecimentos na área de segurança cibernética! 🚀</p>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Hacking Blog | Powered by Ciel</p>
+    </footer>
+</body>
+</html>
