@@ -169,7 +169,7 @@
     </nav>
     <main>
         <div class="scripts">
-            <h2>Minhas Scripts</h2>
+            <center><h2>Minhas Scripts</h2></center>
             <p>// Essa script faz um ataque DDoS básico, enviando pacotes para um IP e porta específicos pelo tempo determinado. Lembre-se de usar essa script somente para fins educativos e éticos. Usar ferramentas como essa para prejudicar outros é ilegal e contra os princípios de hacking ético que a gente valoriza! //</p>
             <div class="script-content">
                 <textarea readonly id="script1">
@@ -305,9 +305,134 @@ Mineração real de BTC com GPUs não é eficiente em comparação com ASICs ded
 
             </div>
             <h1>___________________________________________________________________</h1>
+
+       <br>
+        <p>// Este script em Python utiliza a biblioteca PyOpenCL para minerar Bitcoin (BTC) usando a GPU. Ele configura a conexão com uma pool de mineração 🎛️ e calcula hashes de dados aleatórios 📊, aproveitando o poder de processamento da GPU 🎮. Embora seja uma simulação simplificada, é ideal para fins educativos sobre mineração de criptomoedas 💻. //
+</p>
+            <div class="script-content">
+                <textarea readonly id="script2">import hashlib
+import cv2
+import numpy as np
+import mss
+import matplotlib.pyplot as plt
+from PIL import Image
+from scipy.signal import find_peaks
+
+def capture_screen():
+    with mss.mss() as sct:
+        monitor = sct.monitors[1]  # Captura o monitor principal
+        screenshot = sct.grab(monitor)
+        img = Image.frombytes('RGB', screenshot.size, screenshot.bgra, 'raw', 'BGRX')
+        return np.array(img)
+
+def extract_prices_from_image(img):
+    # Converter para escala de cinza
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+    # Definir a região de interesse (ROI) na parte inferior da imagem
+    height, width = gray.shape
+    roi_height = int(height * 0.2)  # Usar os 20% inferiores da imagem
+    roi = gray[height - roi_height:height, :]
+
+    # Aplicar threshold para destacar os elementos do gráfico
+    _, thresh = cv2.threshold(roi, 200, 255, cv2.THRESH_BINARY_INV)
+
+    # Encontrar contornos
+    contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+    # Filtrar contornos por área para remover ruído
+    min_area = 50
+    filtered_contours = [cnt for cnt in contours if cv2.contourArea(cnt) > min_area]
+
+    # Extrair os pontos mais baixos de cada contorno (assumindo que representam os preços)
+    price_points = []
+    for cnt in filtered_contours:
+        lowest_point = tuple(cnt[cnt[:,:,1].argmax()][0])
+        price_points.append(lowest_point)
+
+    # Ordenar os pontos da esquerda para a direita
+    price_points.sort(key=lambda x: x[0])
+
+    # Converter os pontos em uma série de preços
+    prices = [height - p[1] for p in price_points]  # Inverter a coordenada y
+
+    # Normalizar os preços
+    if prices:
+        min_price, max_price = min(prices), max(prices)
+        prices = [(p - min_price) / (max_price - min_price) * 100 for p in prices]
+
+    # Suavizar os preços para remover ruído
+    prices = np.convolve(prices, np.ones(5)/5, mode='valid')
+
+    return prices
+
+def calculate_sma(prices, window):
+    return np.convolve(prices, np.ones(window), 'valid') / window
+
+def analyze_chart(prices, short_window=5, long_window=20):
+    # Calcular médias móveis
+    sma_short = calculate_sma(prices, window=short_window)
+    sma_long = calculate_sma(prices, window=long_window)
+
+    # Plot para visualização
+    plt.figure(figsize=(10, 5))
+    plt.plot(prices, label='Preço')
+    plt.plot(range(short_window-1, len(sma_short) + short_window-1), sma_short, label=f'SMA Curta ({short_window})')
+    plt.plot(range(long_window-1, len(sma_long) + long_window-1), sma_long, label=f'SMA Longa ({long_window})')
+    plt.title('Análise de Médias Móveis')
+    plt.xlabel('Tempo')
+    plt.ylabel('Preço Normalizado')
+    plt.legend()
+    plt.grid()
+    plt.show()
+
+    # Lógica de compra/venda
+    if sma_short[-1] > sma_long[-1]:
+        return "Comprar"
+    else:
+        return "Vender"
+
+if __name__ == "__main__":
+    img = capture_screen()
+    prices = extract_prices_from_image(img)
+    decision = analyze_chart(prices)
+    print(f"Decisão: {decision}")
+
+</textarea>
+<center><button class="copy-button" onclick="copyScript('script2')">📋 Copiar Script</button></center>
+  <center><h3> Este script em Python captura a tela, extrai dados de preços de um gráfico e os analisa usando médias móveis. Ele fornece uma recomendação de compra ou venda com base na análise dos preços. Ideal para automação da análise de gráficos de preços em tempo real. 📈🖥️</h3></center>
+  <p><center>
+   
+<h3>🛠️ Recursos:</h3>
+<li><strong>Acesso à captura de tela do monitor 🖥️</strong></li>
+
+<li><strong>Extração de preços de gráficos a partir de imagens 🖼️</strong></li>
+
+<li><strong>Conversão de imagens para escala de cinza e aplicação de threshold 🎨</strong></li>
+<li><strong>Filtragem de contornos para remover ruído e identificar pontos de preço 📉</strong></li>
+<li><strong>Normalização e suavização dos dados de preços para análise 📊</strong></li>
+<li><strong>Plotagem dos preços e médias móveis para visualização gráfica 📈 🧮</strong></li>
+<li><strong>Cálculo de médias móveis simples (SMA) 🧮</strong></li>
+<li><strong>Fornecimento de recomendações de compra ou venda com base na análise 🔍</strong></li>
+
+
+
+
+</center></p>
+<h3>⚠️ Nota:
+Este script não garante 100% de precisão nas recomendações de compra ou venda. Ele deve ser utilizado como uma ferramenta auxiliar e não como uma substituição para análises financeiras detalhadas ou conselhos de especialistas. Os resultados podem variar com base na qualidade das capturas de tela e nas características específicas dos gráficos analisados. Utilize com discernimento e verifique os dados antes de tomar decisões financeiras. 📊📈.</h3>
+
+
+                
+
+            </div>
+            <h1>___________________________________________________________________</h1>
+            
        
         </div>
+        </div>
     </main>
+
     <footer>
         <p>© 2024 Hacking Blog | Powered by StormCentral</p>
     </footer>
